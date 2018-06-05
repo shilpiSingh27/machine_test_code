@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+html{
+    max-width: 1600px;
+  }
+  
+  body {
+    font-family: Roboto light, sans-serif;
+    max-width: 1600px;
+    background: #FBFCFC;
+    margin: auto;
+    position: absolute;
+    left: 0; right: 0;
+  }
+  
+  /* common css  */
+
+  .top-20{
+    margin-top: 20px;
+  }
+
+  .pointer{
+    cursor: pointer;
+  }
