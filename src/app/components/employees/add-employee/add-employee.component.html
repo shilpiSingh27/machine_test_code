@@ -1,0 +1,54 @@
+<div class="col-xs-12 card">
+  <div class="col-xs-12 text-right">
+    <i class="fa fa-times" (click)="closeAddEmpView()"></i>
+  </div>
+  <h3>Add new employee</h3>
+  <hr>  
+
+  <form (ngSubmit)="addEmployee()" [formGroup]="addEmpForm">
+    <div class="form-group col-xs-12 col-sm-6">
+      <label for="name" >Name:</label>
+      <input type="text" name="name" [formControl]="addEmpForm.controls['name']" class="form-control" id="name">
+      <small *ngIf="addEmpForm.controls['name'].hasError('required') && addEmpForm.controls['name'].touched" class="text-danger bottom-10">
+        Please Enter Valid password.
+      </small>
+      <small
+      *ngIf="addEmpForm.controls['name'].hasError('minlength') && addEmpForm.controls['name'].touched"
+      class="text-danger bottom-10">Name should be atleast 4 characters long.
+    </small>
+    </div>
+    <div class="form-group col-xs-12 col-sm-6">
+      <label for="phone" >Phone Number:</label>
+      <input type="text" name="phone" [formControl]="addEmpForm.controls['phone']" class="form-control" id="phone">
+      <small *ngIf="!addEmpForm.controls['phone'].valid && addEmpForm.controls['phone'].touched" class="text-danger bottom-10">Please enter valid phone number.
+      </small>
+    </div>
+    <div class="form-group col-xs-12 col-sm-6">
+      <label for="city" >City:</label>
+      <input type="text" name="city" class="form-control"  [formControl]="addressForm.controls['city']"  id="city">
+      <small *ngIf="!addressForm.controls['city'].valid && addressForm.controls['city'].touched" class="text-danger">Please Enter Valid City.
+      </small>
+    </div>
+    <div class="form-group col-xs-12 col-sm-6">
+      <label for="address1" >Address 1:</label>
+      <input type="text" name="address1" [formControl]="addressForm.controls['address1']"  class="form-control" id="address1">
+      <small *ngIf="!addressForm.controls['address1'].valid && addressForm.controls['address1'].touched" class="text-danger bottom-10">Please enter valid address.
+      </small>
+    </div>
+    <div class="form-group col-xs-12 col-sm-6">
+      <label for="address2">Address 2:</label>
+      <input type="text" name="address2"  [formControl]="addressForm.controls['address2']" class="form-control" id="address2">
+      <small *ngIf="!addressForm.controls['address2'].valid && addressForm.controls['address2'].touched" class="text-danger bottom-10">Please enter valid name.
+      </small>
+    </div>
+    <div class="form-group col-xs-12 col-sm-6">
+      <label for="postalCode">Postal Code:</label>
+      <input type="text" name="postalCode" [formControl]="addressForm.controls['postalCode']" class="form-control" id="postalCode">
+      <small *ngIf="!addressForm.controls['postalCode'].valid && addressForm.controls['postalCode'].touched" class="text-danger bottom-10">Please enter valid postal code.
+      </small>
+    </div>
+    <div class="col-xs-12 text-center">
+        <button class="btn btn-primary" type="submit">Add Employee</button>
+    </div>
+  </form>
+</div>
